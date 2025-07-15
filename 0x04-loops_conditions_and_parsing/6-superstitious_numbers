@@ -1,16 +1,10 @@
 #!/usr/bin/env bash
-# Script that displays current directory contents with only the part after the first dash
+# This script displays the content of the current directory, showing only the part after the first dash
 
-for file in *; do
-    # Skip if file doesn't exist or is hidden
-    if [[ ! -e "$file" ]] || [[ "$file" == .* ]]; then
-        continue
-    fi
-    
-    # Extract the part after the first dash, or show whole name if no dash
-    if [[ "$file" == *-* ]]; then
+for file in *
+do
+    if [[ "$file" != .* ]]
+    then
         echo "${file#*-}"
-    else
-        echo "$file"
     fi
 done
