@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
-# this script loops from 1 to 10 and displays different messages based on the iteration number
-i=1
- while [ $i -le 10 ]
+# This script displays "bad luck" for the 4th iteration, "good luck" for the 8th iteration, and "Best School" for all other iterations
+
+counter=1
+while [ $counter -le 10 ]
 do
-if [$i -eq 4 ]
-then
-   echo "bad luck"
-   elif [ $i -eq 8 ]
- then 
-   echo "good luck"
- else
-   echo "best school"
- fi
- ((i++))
+    if [ $counter -eq 4 ]
+    then
+        echo "bad luck"
+    elif [ $counter -eq 8 ]
+    then
+        echo "good luck"
+    else
+        echo "Best School"
+    fi
+    ((counter++))
 done
