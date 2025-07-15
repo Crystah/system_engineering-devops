@@ -2,13 +2,15 @@
 # Script that displays current directory contents with only the part after the first dash
 
 for file in *; do
-    # Check if the file exists and is not hidden
-    if [[ -e "$file" && "$file" != .* ]]; then
-        # Extract the part after the first dash
-        if [[ "$file" == *-* ]]; then
-            echo "${file#*-}"
-        else
-            echo "$file"
-        fi
+    # Skip if file doesn't exist or is hidden
+    if [[ ! -e "$file" ]] || [[ "$file" == .* ]]; then
+        continue
+    fi
+    
+    # Extract the part after the first dash, or show whole name if no dash
+    if [[ "$file" == *-* ]]; then
+        echo "${file#*-}"
+    else
+        echo "$file"
     fi
 done
