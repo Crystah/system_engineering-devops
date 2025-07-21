@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-# Your script description here
-cleanup() {
-    # Do any necessary cleanup here
-    exit 0
-}
-trap cleanup SIGTERM SIGINT
-# Rest of your script...
+# Script that handles SIGTERM signals silently
+# Set up signal handler that exits silently (no output)
+trap 'exit 0' SIGTERM
+# Your main script logic goes here
+# For example, if this is a daemon or long-running process:
+while true; do
+    # Do your work here
+    sleep 1
+done
