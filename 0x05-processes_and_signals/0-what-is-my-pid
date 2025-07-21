@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-echo $$
+# Display all running processes in a hierarchical format showing parent-child relationships
+ps auxf
