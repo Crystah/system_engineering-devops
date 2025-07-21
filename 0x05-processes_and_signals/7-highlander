@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script that displays "To infinity and beyond" indefinitely and handles SIGTERM
-# Set up signal handler for SIGTERM that does nothing (ignores the signal)
-trap '' SIGTERM
+# Set up signal handler for SIGTERM that prints message but doesn't exit
+trap 'echo "I am invincible!!!"' SIGTERM
 # Infinite loop
 while true; do
     echo "To infinity and beyond"
